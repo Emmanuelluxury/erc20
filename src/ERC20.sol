@@ -48,6 +48,7 @@ contract ERC20 {
         return true;
     }
     //Mint tokens
+
     function mint(address to, uint256 amount) public {
         require(to != address(0), "Can't Mint To Zero Address");
         balanceOf[to] += amount;
@@ -55,13 +56,13 @@ contract ERC20 {
         emit Transfer(address(0), to, amount);
     }
     // Burn tokens
+
     function burn(uint256 amount) public {
         require(balanceOf[msg.sender] >= amount, "Insufficent Balance");
         balanceOf[msg.sender] -= amount;
         totalSupply -= amount;
         emit Transfer(msg.sender, address(0), amount);
     }
-
 
     // Get allowance
     function getAllowance(address owner, address spender) public view returns (uint256) {

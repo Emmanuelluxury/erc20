@@ -27,7 +27,7 @@ contract ERC20Test is Test {
         token.transfer(Cornelius, amount);
 
         assertEq(token.balanceOf(address(this)), TOTALSUPPLY - amount);
-        assertEq(token.balanceOf(Cornelius),amount);
+        assertEq(token.balanceOf(Cornelius), amount);
 
         console.log(token.balanceOf(address(this)));
         console.log(token.balanceOf(Cornelius));
@@ -50,7 +50,7 @@ contract ERC20Test is Test {
         uint256 amount = 5 * (10 ** DECIMALS);
         address Emmanuel = address(0x125);
         token.mint(Emmanuel, amount);
-        assertEq(token.balanceOf(Emmanuel),amount);
+        assertEq(token.balanceOf(Emmanuel), amount);
         assertEq(token.totalSupply(), TOTALSUPPLY + amount);
     }
 
@@ -59,5 +59,4 @@ contract ERC20Test is Test {
         token.burn(amount);
         assertEq(token.balanceOf(address(this)), TOTALSUPPLY - amount);
     }
-
 }
