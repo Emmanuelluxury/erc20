@@ -15,7 +15,7 @@ contract ERC20Test is Test {
         token = new ERC20("MyToken", "MTK", DECIMALS, TOTALSUPPLY);
     }
 
-    function testInitialSupply() public {
+    function testInitialSupply() public view {
         assertEq(token.name(), "MyToken");
         assertEq(token.symbol(), "MTK");
         assertEq(token.totalSupply(), TOTALSUPPLY);
